@@ -1,0 +1,235 @@
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 120px; /* Ajusta para evitar que el contenido sea tapado por el menú fijo */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    color: #20395c;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Estilos de Navegación (Header) */
+.navbar {
+    background-color: #20395c;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    width: 120px;
+}
+
+/* Menú visible en pantallas grandes */
+.navbar nav ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    align-items: center;
+}
+
+.navbar nav ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #f0c674;
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 30px;  /* Ancho de las líneas del menú */
+    height: 3px;  /* Altura de cada línea */
+    background-color: #ffffff;  /* Color de las líneas */
+    margin: 6px 0;  /* Separación entre las líneas */
+    transition: all 0.3s;  /* Animación de transición para la transformación */
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Mostrar el menú normalmente en pantallas grandes */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex; /* Mostrar el menú horizontalmente en pantallas grandes */
+    }
+
+    .hamburger-menu {
+        display: none; /* Ocultar el menú hamburguesa en pantallas grandes */
+    }
+}
+
+/* Mostrar el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+    }
+    nav ul {
+        display: flex; /* Mostrar el menú cuando se activa el checkbox */
+        flex-direction: column;
+    }
+
+    nav {
+        display: none; /* Ocultar el menú horizontal en pantallas pequeñas */
+    }
+
+    /* Cuando el menú hamburguesa está activo, mostrar el menú */
+    .menu-toggle:checked ~ nav {
+        display: flex; /* Mostrar el menú cuando se activa el checkbox */
+        flex-direction: column;
+        background-color: #20395c;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        z-index: 1;
+    }
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.service-box {
+    width: 30%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 80%; /* Asegura que se ajuste en pantallas pequeñas */
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tecnologías y Logos */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.logo-container img {
+    width: 100px;
+    margin: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #20395c;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer img {
+    width: 100px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.github-link {
+    font-size: 24px;
+    color: white;
+}
+
+.github-link:hover {
+    color: #f0c674;
+}
+
+/* Responsividad del Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+
+    footer img {
+        width: 80px;
+    }
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    .services-container, .soporte-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box, .soporte-box {
+        width: 80%;
+    }
+
+    .team {
+        flex-direction: column;
+        align-items: center;
+    }
+}

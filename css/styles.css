@@ -69,6 +69,8 @@ a {
     align-items: center;
 }
 
+
+
 .navbar nav ul li a {
     color: white;
     font-weight: bold;
@@ -79,6 +81,14 @@ a {
 .navbar nav ul li a:hover {
     color: #f0c674;
 }
+
+/* Estilo para los enlaces activos */
+nav ul li a.active {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
 
 /* Menú hamburguesa */
 .hamburger-menu {
@@ -100,45 +110,6 @@ a {
     display: none;
 }
 
-/* Mostrar el menú normalmente en pantallas grandes */
-@media (min-width: 769px) {
-    nav ul {
-        display: flex; /* Mostrar el menú horizontalmente en pantallas grandes */
-    }
-
-    .hamburger-menu {
-        display: none; /* Ocultar el menú hamburguesa en pantallas grandes */
-    }
-}
-
-/* Mostrar el menú hamburguesa en pantallas pequeñas */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
-    }
-    nav ul {
-        display: flex; /* Mostrar el menú cuando se activa el checkbox */
-        flex-direction: column;
-    }
-
-    nav {
-        display: none; /* Ocultar el menú horizontal en pantallas pequeñas */
-    }
-
-    /* Cuando el menú hamburguesa está activo, mostrar el menú */
-    .menu-toggle:checked ~ nav {
-        display: flex; /* Mostrar el menú cuando se activa el checkbox */
-        flex-direction: column;
-        background-color: #20395c;
-        position: absolute;
-        top: 110px;
-        left: 0;
-        right: 0;
-        padding: 20px;
-        z-index: 1;
-    }
-}
-
 .services-container {
     display: flex;
     justify-content: space-around;
@@ -148,22 +119,36 @@ a {
 
 .service-box {
     width: 30%;
-    max-width: 300px;
+    max-width: 600px;
+    background-color: #d9d9d9; /* Fondo más oscuro */
+    color: white; /* Cambia el texto a blanco para mejor contraste */
+    padding: 20px;
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
     margin-bottom: 20px;
+    text-align: center;
 }
 
-@media (max-width: 768px) {
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-box {
-        width: 80%; /* Asegura que se ajuste en pantallas pequeñas */
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 30px;
 }
+
+.projects-box {
+    width: auto;
+    max-width: 600px;
+    min-width: 430px;
+    background-color: #d9d9d9; /* Fondo más oscuro */
+    padding: 20px;
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 
 /* Tecnologías y Logos */
 .logo-container {
@@ -175,8 +160,12 @@ a {
 }
 
 .logo-container img {
-    width: 100px;
     margin: 15px;
+    background-color: #d9d9d9; /* Fondo oscuro detrás de los logos */
+    padding: 10px; /* Espacio alrededor del logo */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 100px; /* Controlar el tamaño de los logos */
+    height: auto; /* Mantener la proporción */
 }
 
 /* Footer */
@@ -206,30 +195,67 @@ footer p {
     color: #f0c674;
 }
 
-/* Responsividad del Footer */
+
+/* Ajustes Responsive */
+
+
+/* Mostrar el menú normalmente en pantallas grandes */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex; /* Mostrar el menú horizontalmente en pantallas grandes */
+    }
+
+    .hamburger-menu {
+        display: none; /* Ocultar el menú hamburguesa en pantallas grandes */
+    }
+}
+
+
+/* Mostrar el menú hamburguesa en pantallas chicas y organizar el contenido */
 @media (max-width: 768px) {
+
+    .hamburger-menu {
+        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+    }
+    nav ul {
+        display: flex; /* Mostrar el menú cuando se activa el checkbox */
+        flex-direction: column;
+    }
+
+    nav {
+        display: none; /* Ocultar el menú horizontal en pantallas pequeñas */
+    }
+
+    /* Cuando el menú hamburguesa está activo, mostrar el menú */
+    .menu-toggle:checked ~ nav {
+        display: flex; /* Mostrar el menú cuando se activa el checkbox */
+        flex-direction: column;
+        background-color: #20395c;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    .services-container, .soporte-icons, .projects-container, .team {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box, .soporte-box, .projects-box {
+        width: 80%; /* Asegura que se ajuste en pantallas pequeñas */
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+
     footer {
         padding: 15px;
     }
 
     footer img {
         width: 80px;
-    }
-}
-
-/* Ajustes Responsive */
-@media (max-width: 768px) {
-    .services-container, .soporte-icons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-box, .soporte-box {
-        width: 80%;
-    }
-
-    .team {
-        flex-direction: column;
-        align-items: center;
     }
 }

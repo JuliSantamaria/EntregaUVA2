@@ -148,7 +148,15 @@ nav ul li a.active {
     margin-bottom: 20px;
     text-align: center;
 }
-
+.projects-extrabox {
+    width: 900px;
+    background-color: #d9d9d9; /* Fondo más oscuro */
+    padding: 20px;
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 /* Tecnologías y Logos */
 .logo-container {
@@ -244,7 +252,7 @@ footer p {
         align-items: center;
     }
 
-    .service-box, .soporte-box, .projects-box {
+    .service-box, .soporte-box, .projects-box, .projects-extrabox {
         width: 80%; /* Asegura que se ajuste en pantallas pequeñas */
         max-width: 100%;
         margin-bottom: 20px;

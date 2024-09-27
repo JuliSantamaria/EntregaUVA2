@@ -140,7 +140,6 @@ nav ul li a.active {
 .projects-box {
     width: auto;
     max-width: 600px;
-    min-width: 50%;
     background-color: #d9d9d9; /* Fondo más oscuro */
     padding: 20px;
     border-radius: 8px; /* Añade esquinas redondeadas */
@@ -189,28 +188,28 @@ nav ul li a.active {
 /* Footer */
 footer {
     background-color: #20395c;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #ccc;
 }
 
-footer img {
-    width: 100px;
-    margin-bottom: 10px;
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.footer-left p {
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-right img.uade-logo {
+    height: 50px;
+    margin-right: 15px;
+    vertical-align: middle;
     background-color: #ffffff;
-}
-
-footer p {
-    margin-bottom: 10px;
-}
-
-.github-link {
-    font-size: 24px;
-    color: white;
-}
-
-.github-link:hover {
-    color: #f0c674;
 }
 
 
@@ -269,11 +268,21 @@ footer p {
     }
 
 
-    footer {
-        padding: 15px;
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    footer img {
-        width: 80px;
+    .footer-left img.uade-logo {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .footer-left p {
+        margin-bottom: 10px;
+    }
+
+    .footer-right {
+        margin-top: 10px;
     }
 }

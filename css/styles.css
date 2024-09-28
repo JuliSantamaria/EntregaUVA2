@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: Roboto;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -35,7 +36,6 @@ p {
 a {
     text-decoration: none;
     color: #E9F1FA;
-    font-weight: bold;
 }
 
 /* Estilos de Navegación (Header) */

@@ -236,7 +236,7 @@ footer {
     .menu-toggle:checked ~ nav {
         display: flex;
         flex-direction: column;
-        background-color: #20395c;
+        background-color: #E9F1FA;
         position: absolute;
         top: 110px;
         left: 0;
